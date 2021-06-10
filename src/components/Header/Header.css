@@ -1,0 +1,19 @@
+* {
+  border: red solid 1px;
+}
+
+.header {
+  display: grid;
+  grid-template-columns: 6em 10em;
+  grid-template-rows: 50px;
+  align-items: center;
+}
+
+h1 {
+  font-size: 15px;
+}
+
+.favorite-tab,
+.game-tab {
+  font-size: 10px;
+}

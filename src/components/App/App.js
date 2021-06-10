@@ -1,6 +1,7 @@
 import './App.css';
 import React, { Component } from 'react';
 import { getAdvice } from '../../apiCalls';
+import Header from '../Header/Header'
 
 class App extends Component {
   constructor() {
@@ -22,7 +23,7 @@ class App extends Component {
   render() {
     return(
       <main>
-        <h1>Hi</h1>
+        <Header></Header>
         <p>{this.state.advice}</p>
       </main>
     )
