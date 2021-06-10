@@ -1,5 +1,5 @@
 * {
-  border: red solid 1px;
+  /* border: red solid 1px; */
 }
 
 .header {
@@ -15,5 +15,9 @@ h1 {
 
 .favorite-tab,
 .game-tab {
+  font-size: 14px;
+}
+
+.fa-cat {
   font-size: 10px;
 }
