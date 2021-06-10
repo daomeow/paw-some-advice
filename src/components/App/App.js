@@ -1,6 +1,6 @@
 import './App.css';
 import React, { Component } from 'react';
-import {  getData } from '../../apiCalls';
+import { getData } from '../../apiCalls';
 import Header from '../Header/Header'
 import Dashboard from '../Dashboard/Dashboard';
 
@@ -34,4 +34,5 @@ class App extends Component {
     )
   }
 }
+
 export default App;
