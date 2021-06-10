@@ -1,17 +1,21 @@
 import './App.css';
 import React, { Component } from 'react';
-import { getAdvice } from '../../apiCalls';
+import { getAdvice, getCatPicture } from '../../apiCalls';
+import Header from '../Header/Header'
+import Dashboard from '../Dashboard/Dashboard';
 
 class App extends Component {
   constructor() {
     super()
     this.state = {
       advice: '',
+      cat: '',
       error: ''
     }
   }
 
   componentDidMount = () => {
+    this.displayCat();
     getAdvice()
       .then(data => {
         this.setState({ advice : data.slip.advice } )
@@ -19,11 +23,21 @@ class App extends Component {
     .catch(error => this.setState({ error: 'Something went wrong' }))
   }
 
+  displayCat = () => {
+    getCatPicture() 
+    .then(data => {
+      this.setState({ cat: data.url})
+    })
+  }
+
   render() {
     return(
       <main>
-        <h1>Hi</h1>
-        <p>{this.state.advice}</p>
+        <Header></Header>
+        <Dashboard
+          advice={this.state.advice}
+          catPicture={this.state.cat}
+        />
       </main>
     )
   }
