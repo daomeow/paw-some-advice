@@ -4,7 +4,7 @@ function Dashboard ({ advice, catPicture }) {
   return(
     <section className='dashboard'>
       <p>{advice}</p>
-      <img src={catPicture}></img>
+      <img className='cat-picture' src={catPicture}></img>
     </section>
   )
 }
