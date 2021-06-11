@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 import { getData } from '../../apiCalls';
 import Header from '../Header/Header'
 import Dashboard from '../Dashboard/Dashboard';
+import FavoriteList from '../FavoriteList/FavoriteList';
+import { Route, Switch, Redirect } from 'react-router-dom'
 
 class App extends Component {
   constructor() {
