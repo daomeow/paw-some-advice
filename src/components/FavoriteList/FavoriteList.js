@@ -7,7 +7,7 @@ function FavoriteList({ favorites }) {
     return(
       <div>
         <p>{fav.advice}</p>
-        <img className='cat-picture' src={fav.cat} alt='Cat picture'></img>
+        <img className='cat-picture' src={fav.cat} alt='Cat picture' id={Date.now()}></img>
       </div>
     )
   })

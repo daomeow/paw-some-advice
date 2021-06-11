@@ -25,7 +25,7 @@ class App extends Component {
     .catch(error => this.setState({ error: 'Something went wrong' }))
   }
 
-  addToFavoriteList = (newFavorite) => {
+  addToFavoriteList = () => {
     if (this.state.advice) {
       var joined = this.state.favorites.concat({ advice: this.state.advice, cat: this.state.cat });
       this.setState({ favorites: joined })
