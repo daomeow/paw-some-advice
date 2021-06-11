@@ -14,7 +14,7 @@ class App extends Component {
     }
   }
 
-  componentDidMount = () => {
+  updateHomeDisplay = () => {
     getData()
       .then(data => {
         this.setState({ advice:data[0].slip.advice, cat: data[1].url} )
@@ -29,6 +29,7 @@ class App extends Component {
         <Dashboard
           advice={this.state.advice}
           catPicture={this.state.cat}
+          getData={this.updateHomeDisplay}
         />
       </main>
     )
