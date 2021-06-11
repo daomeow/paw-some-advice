@@ -13,7 +13,7 @@ function Dashboard ({ advice, catPicture, getData, addFavorite}) {
           <img className='cat-picture' src={catPicture} alt='Cat picture'></img>
         </div>
       }
-      <button className='advice-button' onClick={getData}>Receive Adive</button>
+      <button className='advice-button' onClick={getData}>Receive Advice</button>
       <button className='add-favorite' onClick={addFavorite}>Add to Favorite</button>
     </section>
   )

@@ -27,7 +27,7 @@ class App extends Component {
 
   addToFavoriteList = (newFavorite) => {
     if (this.state.advice) {
-      var joined = this.state.favorites.concat(this.state.advice);
+      var joined = this.state.favorites.concat({ advice: this.state.advice, cat: this.state.cat });
       this.setState({ favorites: joined })
     }
   }
@@ -52,8 +52,6 @@ class App extends Component {
             exact path='/:favorites'
             render={ () => (
               <FavoriteList
-                // advice={this.state.advice}
-                // catPicture={this.state.cat}
                 favorites={this.state.favorites}
               />
             )}
