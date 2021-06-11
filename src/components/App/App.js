@@ -12,6 +12,7 @@ class App extends Component {
     this.state = {
       advice: null,
       cat: null,
+      favorites: [],
       error: ''
     }
   }
@@ -22,6 +23,13 @@ class App extends Component {
         this.setState({ advice:data[0].slip.advice, cat: data[1].url} )
       })
     .catch(error => this.setState({ error: 'Something went wrong' }))
+  }
+
+  addToFavoriteList = (newFavorite) => {
+    if (this.state.advice) {
+      var joined = this.state.favorites.concat(this.state.advice);
+      this.setState({ favorites: joined })
+    }
   }
 
   render() {
@@ -36,6 +44,7 @@ class App extends Component {
                 advice={this.state.advice}
                 catPicture={this.state.cat}
                 getData={this.updateHomeDisplay}
+                addFavorite={this.addToFavoriteList}
               />
             )}
           />
@@ -43,8 +52,9 @@ class App extends Component {
             exact path='/:favorites'
             render={ () => (
               <FavoriteList
-                advice={this.state.advice}
-                catPicture={this.state.cat}
+                // advice={this.state.advice}
+                // catPicture={this.state.cat}
+                favorites={this.state.favorites}
               />
             )}
           />
