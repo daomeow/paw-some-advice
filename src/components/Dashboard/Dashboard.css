@@ -1,0 +1,27 @@
+@media screen and (min-device-width: 320px) {
+  .dashboard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .cat-picture,
+  .default-cat {
+    width: 12em;
+    height: 12em
+  }
+
+  .advice-button {
+    width: 8em;
+    height: 2em;
+    font-size: 12px;
+  }
+
+
+}
+
+@media screen and (min-width: 321px) {}
+@media screen and (min-width: 750px) {}
+@media screen and (min-width: 900px) {}
+@media screen and (min-width: 1300px) {}
+@media screen and (min-width: 1600px) {}
+

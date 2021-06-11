@@ -1,9 +1,10 @@
-export const getAdvice = () => {
-  return fetch('https://api.adviceslip.com/advice')
-    .then(response => response.json())
-}
-
-export const getCatPicture = () => {
-  return fetch('https://thatcopy.pw/catapi/rest/')
-    .then(response => response.json())
+export const getData = () => {
+  return Promise.all([
+    fetch('https://api.adviceslip.com/advice'), 
+    fetch('https://thatcopy.pw/catapi/rest/')
+  ]).then((responses) => {
+    return Promise.all(responses.map((response) => {
+        return response.json();
+    }))
+  }) 
 }
