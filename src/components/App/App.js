@@ -8,8 +8,8 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-      advice: '',
-      cat: '',
+      advice: null,
+      cat: null,
       error: ''
     }
   }
