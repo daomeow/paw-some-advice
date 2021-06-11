@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 import { getData } from '../../apiCalls';
 import Header from '../Header/Header'
 import Dashboard from '../Dashboard/Dashboard';
+import FavoriteList from '../FavoriteList/FavoriteList';
+import { Route, Switch, Redirect } from 'react-router-dom'
 
 class App extends Component {
   constructor() {
@@ -26,11 +28,28 @@ class App extends Component {
     return(
       <main>
         <Header></Header>
-        <Dashboard
-          advice={this.state.advice}
-          catPicture={this.state.cat}
-          getData={this.updateHomeDisplay}
-        />
+        <Switch>
+          <Route 
+            exact path='/'
+            render={ () => (
+              <Dashboard
+                advice={this.state.advice}
+                catPicture={this.state.cat}
+                getData={this.updateHomeDisplay}
+              />
+            )}
+          />
+          <Route 
+            exact path='/:favorites'
+            render={ () => (
+              <FavoriteList
+                advice={this.state.advice}
+                catPicture={this.state.cat}
+              />
+            )}
+          />
+        </Switch>
+        <Redirect to='/' />
       </main>
     )
   }
