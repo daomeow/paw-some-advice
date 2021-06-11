@@ -28,11 +28,28 @@ class App extends Component {
     return(
       <main>
         <Header></Header>
-        <Dashboard
-          advice={this.state.advice}
-          catPicture={this.state.cat}
-          getData={this.updateHomeDisplay}
-        />
+        <Switch>
+          <Route 
+            exact path='/'
+            render={ () => (
+              <Dashboard
+                advice={this.state.advice}
+                catPicture={this.state.cat}
+                getData={this.updateHomeDisplay}
+              />
+            )}
+          />
+          <Route 
+            exact path='/:favorites'
+            render={ () => (
+              <FavoriteList
+                advice={this.state.advice}
+                catPicture={this.state.cat}
+              />
+            )}
+          />
+        </Switch>
+        <Redirect to='/' />
       </main>
     )
   }

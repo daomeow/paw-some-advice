@@ -1,11 +1,17 @@
 import './Header.css';
+import { Link, NavLink } from 'react-router-dom';
 
 function Header () {
   return(
     <section className='header'>
       <h1>Paw-some<br/>Advice</h1>
       <section className='tab-container'>
-        <a className='favorite-tab'><i className="far fa-heart"></i>Favorite</a>
+      <NavLink to='/favorites' className='to-favorites'>
+         <i className="far fa-heart"></i>View Favorites
+      </NavLink>
+      <NavLink to='/' className='go-home'>
+      <i className="fas fa-paw"></i>Go Home
+      </NavLink>
         <a className='game-tab'><i className="fas fa-caret-right"></i>Play Game</a>
       </section>
     </section>
