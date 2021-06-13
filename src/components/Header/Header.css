@@ -11,12 +11,16 @@
 }
 
 h1 {
-  font-size: 15px;
+  font-size: 20px;
+  font-family: 'Padauk', sans-serif;
 }
 
-.favorite-tab,
+.to-favorites,
+.go-home,
 .game-tab {
   font-size: 14px;
+  text-decoration: none;
+  color: black;
 }
 
 .fa-cat {
