@@ -1,4 +1,5 @@
 import './FavoriteCard.css';
+import PropTpes from 'prop-types';
 
 const FavoriteCard = ({ advice, catImage}) => {
   return (
@@ -7,6 +8,11 @@ const FavoriteCard = ({ advice, catImage}) => {
       <img className='cat-picture' src={catImage} alt='Cat picture'></img>
     </div>
   )
+}
+
+FavoriteCard.propTypes = {
+  advice: PropTypes.string,
+  catImage: PropTypes.string
 }
 
 export default FavoriteCard;

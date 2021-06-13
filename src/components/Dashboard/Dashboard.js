@@ -3,7 +3,6 @@ import defaultCat from '../../assets/default-cat.png';
 import PropTypes from 'prop-types';
 
 const Dashboard = ({ advice, catPicture, getData, addFavorite}) => {
-  console.log(typeof(catPicture))
   return (
     <section className='dashboard'>
       <div className='content'>
