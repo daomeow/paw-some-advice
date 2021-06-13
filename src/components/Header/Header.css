@@ -7,6 +7,7 @@
   grid-template-columns: 6em 10em;
   grid-template-rows: 50px;
   align-items: center;
+  background-color: #BDD9BF;
 }
 
 h1 {
