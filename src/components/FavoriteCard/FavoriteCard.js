@@ -1,10 +1,10 @@
 import './FavoriteCard.css';
 
 const FavoriteCard = ({ advice, catImage}) => {
-  return(
+  return (
     <div className='favorite-card'>
       <p>{advice}</p>
-      <img className='cat-picture' src={catImage} alt='Cat picture' id={Date.now()}></img>
+      <img className='cat-picture' src={catImage} alt='Cat picture'></img>
     </div>
   )
 }

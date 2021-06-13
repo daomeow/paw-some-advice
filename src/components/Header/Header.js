@@ -2,7 +2,7 @@ import './Header.css';
 import { Link, NavLink } from 'react-router-dom';
 
 const Header = () => {
-  return(
+  return (
     <section className='header'>
       <h1>Paw-some<br/>Advice</h1>
       <section className='tab-container'>
