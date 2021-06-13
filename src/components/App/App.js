@@ -50,8 +50,12 @@ class App extends Component {
           />
           <Route 
             exact path='/:favorites'
-            render={ () => (
-              <FavoriteList
+            render={() => (
+              !this.state.favorites.length && !this.state.error ?
+              <h2>Loading favorites..</h2>
+              : this.state.error && !this.state.favorites.length ?
+              <h2>{this.state.error}</h2>
+              :<FavoriteList
                 favorites={this.state.favorites}
               />
             )}

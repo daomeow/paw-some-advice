@@ -1,7 +1,7 @@
-import advice from '../fictures/singleAdvice';
+import advice from '../fixtures/singleAdvice';
 import catPicture from '../fixtures/singleCat';
 
-const adviceBaseURL = 'https://api.adviceslip.com/advice';
+const adviceBaseURL = 'https://api.adviceslip.com/advice/115';
 const catBaseURL = 'https://thatcopy.pw/catapi/rest/';
 
 Cypress.Commands.add('interceptAdvice', () => {
