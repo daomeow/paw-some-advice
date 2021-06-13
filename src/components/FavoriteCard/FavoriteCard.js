@@ -1,6 +1,6 @@
 import './FavoriteCard.css';
 
-const FavoriteCard = ({ advice, catImage }) => {
+const FavoriteCard = ({ advice, catImage}) => {
   return(
     <div className='favorite-card'>
       <p>{advice}</p>

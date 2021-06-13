@@ -8,6 +8,7 @@ const FavoriteList = ({ favorites }) => {
       <FavoriteCard
          advice={favorite.advice}
          catImage={favorite.cat}
+         key={favorite.id}
       />
     )
   });
