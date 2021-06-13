@@ -7,12 +7,13 @@
   grid-template-columns: 6em 10em;
   grid-template-rows: 50px;
   align-items: center;
-  background-color: #BDD9BF;
+  background-color: #62959c;
 }
 
 h1 {
   font-size: 20px;
   font-family: 'Padauk', sans-serif;
+  padding: 5px 0 0 5px;
 }
 
 .to-favorites,

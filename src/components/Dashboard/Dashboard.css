@@ -1,6 +1,6 @@
 @media screen and (min-device-width: 320px) {
   .dashboard {
-    background-color: #BDD9BF;
+    background-color: #62959c;
     height: 33em;    
     display: flex;
     flex-direction: column;
@@ -19,7 +19,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #412234;
+    background-color: #726a95;
     width: 18em;
   }
 
@@ -31,6 +31,7 @@
 
   .button-container {
     display: flex;
+    padding: 15px 0;
   }
 
   .advice-button, 
