@@ -26,7 +26,7 @@ class App extends Component {
   }
 
   addToFavoriteList = () => {
-    if (this.state.advice) {
+    if (this.state.advice && this.state.cat) {
       var joined = this.state.favorites.concat({ advice: this.state.advice, cat: this.state.cat });
       this.setState({ favorites: joined })
     }

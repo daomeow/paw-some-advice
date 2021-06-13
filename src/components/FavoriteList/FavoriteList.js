@@ -1,8 +1,6 @@
 import './FavoriteList.css';
 
-function FavoriteList({ favorites }) {
-  console.log(favorites)
-  
+function FavoriteList({ favorites }) {  
   const favoriteCards = favorites.map(fav => {
     return(
       <div>
