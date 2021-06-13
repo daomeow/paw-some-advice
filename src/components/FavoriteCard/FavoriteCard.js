@@ -1,5 +1,5 @@
 import './FavoriteCard.css';
-import PropTpes from 'prop-types';
+import PropTypes from 'prop-types';
 
 const FavoriteCard = ({ advice, catImage}) => {
   return (

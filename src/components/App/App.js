@@ -20,7 +20,7 @@ class App extends Component {
   updateHomeDisplay = () => {
     getData()
       .then(data => {
-        this.setState({ advice:data[0].slip.advice, cat: data[1].url} )
+        this.setState({ advice:data[0].slip.advice, cat: data[1].webpurl} )
       })
     .catch(error => this.setState({ error: 'Something went wrong' }))
   }
