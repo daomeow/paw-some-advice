@@ -1,7 +1,7 @@
 import './Header.css';
 import { Link, NavLink } from 'react-router-dom';
 
-function Header () {
+const Header = () => {
   return(
     <section className='header'>
       <h1>Paw-some<br/>Advice</h1>
