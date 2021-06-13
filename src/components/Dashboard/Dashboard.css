@@ -48,8 +48,42 @@
 
 }
 
-@media screen and (min-width: 321px) {}
-@media screen and (min-width: 750px) {}
+@media screen and (min-width: 321px) {
+  .dashboard {
+    height: 59em;    
+    padding-top: 5em;
+  }
+}
+@media screen and (min-width: 750px) {
+  .dashboard {
+    height: 59em;    
+    padding-top: 5em;
+  }
+
+  .content {
+    width: 33em;
+    padding-top: 2em;
+  }
+
+  .advice {
+    font-size: 25px;
+  }
+
+  .cat-picture,
+  .default-cat {
+    width: 15em;
+    height: 15em
+  }
+
+  .button-container {
+    padding-top: 3em;
+  }
+
+  .advice-button, 
+  .add-favorite {
+    font-size: 17px;
+  }
+}
 @media screen and (min-width: 900px) {}
 @media screen and (min-width: 1300px) {}
 @media screen and (min-width: 1600px) {}

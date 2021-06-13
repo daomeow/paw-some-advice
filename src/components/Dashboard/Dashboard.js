@@ -9,7 +9,6 @@ function Dashboard ({ advice, catPicture, getData, addFavorite}) {
         <p className='advice'>{advice}</p>
         {!catPicture ?
             <img className='default-cat' src={defaultCat} alt='Default cat photo'></img>
-
           :<div>
             <img className='cat-picture' src={catPicture} alt='Cat picture'></img>
           </div>

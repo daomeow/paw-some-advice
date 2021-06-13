@@ -1,0 +1,22 @@
+@media screen and (min-device-width: 320px) {
+  .favorite-card {
+    width: 15em;
+    background-color: #726a95;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 10px;
+  }
+
+  .favorite-advice {
+    color: white;
+    padding: 0  8px;
+  }
+}
+
+@media screen and (min-width: 321px) {}
+@media screen and (min-width: 750px) {}
+@media screen and (min-width: 900px) {}
+@media screen and (min-width: 1300px) {}
+@media screen and (min-width: 1600px) {}

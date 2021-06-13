@@ -8,6 +8,7 @@
   grid-template-rows: 50px;
   align-items: center;
   background-color: #62959c;
+  padding-bottom: 8px;
 }
 
 h1 {
@@ -29,10 +30,39 @@ h1 {
   color: black;
 }
 
-.game-tab{
+.game-tab {
   padding-left: 15px;
 }
 
 .fa-cat {
   font-size: 10px;
 }
+
+@media screen and (min-width: 321px) {}
+@media screen and (min-width: 750px) {
+  .header {
+    grid-template-columns: 16em 10em;
+    grid-template-rows: 10em;
+  }
+
+  h1 {
+    font-size: 45px;
+    padding-left: 20px;
+  }
+
+  .tab-container {
+    width: 29em;
+    margin-top: 5em;
+  }
+
+  .to-favorites, .go-home, .game-tab {
+    font-size: 26px;
+  }
+
+  .game-tab {
+    padding-left: 25px;
+  }
+}
+@media screen and (min-width: 900px) {}
+@media screen and (min-width: 1300px) {}
+@media screen and (min-width: 1600px) {}
