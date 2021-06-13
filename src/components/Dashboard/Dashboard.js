@@ -17,7 +17,6 @@ function Dashboard ({ advice, catPicture, getData, addFavorite}) {
       <button className='add-favorite' onClick={addFavorite}>Add to Favorite</button>
     </section>
   )
-
 }
 
 export default Dashboard; 

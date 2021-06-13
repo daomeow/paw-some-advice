@@ -1,18 +1,21 @@
 import './FavoriteList.css';
+import FavoriteCard from '../FavoriteCard/FavoriteCard';
 
-function FavoriteList({ favorites }) {  
-  const favoriteCards = favorites.map(fav => {
-    return(
-      <div>
-        <p>{fav.advice}</p>
-        <img className='cat-picture' src={fav.cat} alt='Cat picture' id={Date.now()}></img>
-      </div>
+const FavoriteList = ({ favorites }) => {  
+  const adviceCards = favorites.map(favorite => {
+    return (
+      <FavoriteCard
+         advice={favorite.advice}
+         catImage={favorite.cat}
+         key={favorite.id}
+      />
     )
-  })
-  return(
-    <section className='favorite-list'>
-      {favoriteCards}
-    </section>
+  });
+
+  return (
+    <div className='favorites-container'>
+      {adviceCards}
+    </div>
   )
 }
 
