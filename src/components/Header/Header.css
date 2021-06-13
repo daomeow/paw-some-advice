@@ -16,12 +16,21 @@ h1 {
   padding: 5px 0 0 5px;
 }
 
+.tab-container {
+  width: 13em;
+  margin-top: 30px;
+}
+
 .to-favorites,
 .go-home,
 .game-tab {
   font-size: 14px;
   text-decoration: none;
   color: black;
+}
+
+.game-tab{
+  padding-left: 15px;
 }
 
 .fa-cat {
