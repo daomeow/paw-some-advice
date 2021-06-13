@@ -1,8 +1,18 @@
 import './FavoriteList.css';
 
-function FavoriteList() {
+function FavoriteList({ favorites }) {  
+  const favoriteCards = favorites.map(fav => {
+    return(
+      <div>
+        <p>{fav.advice}</p>
+        <img className='cat-picture' src={fav.cat} alt='Cat picture' id={Date.now()}></img>
+      </div>
+    )
+  })
   return(
-    <p>Hi Melo!</p>
+    <section className='favorite-list'>
+      {favoriteCards}
+    </section>
   )
 }
 
