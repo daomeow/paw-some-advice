@@ -1,5 +1,6 @@
 import './FavoriteList.css';
 import FavoriteCard from '../FavoriteCard/FavoriteCard';
+import PropTypes from 'prop-types';
 
 const FavoriteList = ({ favorites }) => {  
   const adviceCards = favorites.map(favorite => {
@@ -18,5 +19,9 @@ const FavoriteList = ({ favorites }) => {
     </div>
   )
 }
+
+FavoriteList.propTypes = {
+  favorites: PropTypes.array
+};
 
 export default FavoriteList;

@@ -1,8 +1,9 @@
 import './Dashboard.css';
 import defaultCat from '../../assets/default-cat.png';
+import PropTypes from 'prop-types';
 
-function Dashboard ({ advice, catPicture, getData, addFavorite}) {
-
+const Dashboard = ({ advice, catPicture, getData, addFavorite}) => {
+  console.log(typeof(catPicture))
   return (
     <section className='dashboard'>
       <div className='content'>
@@ -20,6 +21,13 @@ function Dashboard ({ advice, catPicture, getData, addFavorite}) {
       </div>
     </section>
   )
+}
+
+Dashboard.propTypes = {
+  advice: PropTypes.string,
+  catPicture: PropTypes.string,
+  getData: PropTypes.func,
+  addFavorite: PropTypes.func
 }
 
 export default Dashboard; 
