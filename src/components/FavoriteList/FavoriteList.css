@@ -2,9 +2,6 @@
 
 @media screen and (min-device-width: 320px) {
   .favorites-container {
-    /* display: flex;
-    flex-direction: column;
-    align-items: center; */
     justify-content: center;
     display: grid;
     grid-template-columns: repeat(1 1fr);
@@ -19,7 +16,15 @@
     margin-left: 4em;
   }
 }
-@media screen and (min-width: 900px) {}
-@media screen and (min-width: 1300px) {}
+@media screen and (min-width: 900px) {
+  .favorites-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media screen and (min-width: 1300px) {
+  .favorites-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
 @media screen and (min-width: 1600px) {}
 
