@@ -40,10 +40,14 @@ class App extends Component {
           <Route 
             exact path='/'
             render={ () => (
-              <Dashboard
+              // this.state.advice && this.state.cat && !this.state.error ?
+              //   <h2>I'm not kitten you, I'm still loading..</h2>
+              this.state.error && !this.state.advice && !this.state.cat ?
+                <h2>{this.state.error}</h2>
+              :<Dashboard
                 advice={this.state.advice}
                 catPicture={this.state.cat}
-                getData={this.updateHomeDisplay}
+                getData={this.updateHomeDisplay}                                                  
                 addFavorite={this.addToFavoriteList}
               />
             )}
@@ -51,8 +55,10 @@ class App extends Component {
           <Route 
             exact path='/:favorites'
             render={() => (
+              // this.state.favorites.length && !this.state.error ?
+              // <h2>Purrfect, loading favorites..</h2>
               !this.state.favorites.length && !this.state.error ?
-              <h2>Loading favorites..</h2>
+                <h2>I knead you to go home and add your favorites</h2>
               : this.state.error && !this.state.favorites.length ?
               <h2>{this.state.error}</h2>
               :<FavoriteList

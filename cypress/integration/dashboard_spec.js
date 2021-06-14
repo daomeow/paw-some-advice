@@ -1,6 +1,3 @@
-import { isElementOfType } from "react-dom/cjs/react-dom-test-utils.production.min";
-import singleAdvice from "../fixtures/singleAdvice";
-
 describe('Dashboard', () => {
   beforeEach(() => {
     // cy.interceptAdvice()
@@ -11,6 +8,10 @@ describe('Dashboard', () => {
     cy.get('.header > h1').contains('Paw-some')
     cy.get('.header > h1').contains('Advice')
     cy.get('.to-favorites').contains('View Favorites')
+  });
+
+  it('should not display the home button when on the home page', () => {
+    cy.get('go-home').should('not.exist')
   });
 
   it('should render the dashboard component\'s default view on inital load',() => {
@@ -44,14 +45,23 @@ describe('Dashboard', () => {
       cy.url().should('eq', 'http://localhost:3000/' )
   });
 
-  it('should display a specific error message when fetch yields a 500 status', () => {
+  it('should display a specific error message when fetch yields a 404 status', () => {
     cy.intercept('https://api.adviceslip.com/advice', {
-      statusCode: 500
+      statusCode: 404
     })
-      .visit('http://localhost:3000/')
+      // .visit('http://localhost:3000/')
       .get('h2')
       .contains('Something went wrong')
   });
+
+  // it('should display a specific error message when fetch yields a 500 status', () => {
+  //   cy.intercept('https://api.adviceslip.com/advice', {
+  //     statusCode: 500
+  //   })
+  //     .visit('http://localhost:3000/')
+  //     .get('h2')
+  //     .contains('Something went wrong')
+  // });
 
 })
 
