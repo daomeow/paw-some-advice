@@ -21,6 +21,7 @@ describe('Dashboard', () => {
   });
 
   it('should intercept the advice network request', () => {
+    // cy.interceptAdvice()
     // cy.wait('@getAdviceStub')
     // .its('response.statusCode')
     // .should('eq', 200)
@@ -33,6 +34,23 @@ describe('Dashboard', () => {
     cy.intercept('https://thatcopy.pw/catapi/rest/', {
       fixtures: 'cat.json',
     })
+  });
+
+  it('should redirect the user when they access an invalid URL', () => {
+    cy.intercept('https://api.adviceslip.com/advice', {
+      statusCode: 200
+    })
+      .visit('http://localhost:3000/stay-PAWsitive')
+      cy.url().should('eq', 'http://localhost:3000/' )
+  });
+
+  it('should display a specific error message when fetch yields a 500 status', () => {
+    cy.intercept('https://api.adviceslip.com/advice', {
+      statusCode: 500
+    })
+      .visit('http://localhost:3000/')
+      .get('h2')
+      .contains('Something went wrong')
   });
 
 })
