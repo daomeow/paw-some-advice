@@ -1,6 +1,6 @@
 describe('Dashboard', () => {
   beforeEach(() => {
-    // cy.interceptAdvice()
+    cy.interceptAdvice()
     cy.visit('/')
   });
 

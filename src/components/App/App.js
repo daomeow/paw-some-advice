@@ -22,10 +22,12 @@ class App extends Component {
       .then(data => {
         this.setState({ advice:data[0].slip.advice, cat: data[1].webpurl} )
       })
-    .catch(error => this.setState({ error: 'Something went wrong' }))
+    .catch(() => this.setState({ error: 'Something went wrong' }))
   }
 
-  addToFavoriteList = () => {
+  addToFavoriteList = (event) => {
+    console.log('added')
+    event.preventDefault()
     if (this.state.advice && this.state.cat) {
       var joined = this.state.favorites.concat({ advice: this.state.advice, cat: this.state.cat, id: Date.now() });
       this.setState({ favorites: joined })
@@ -58,7 +60,7 @@ class App extends Component {
               // this.state.favorites.length && !this.state.error ?
               // <h2>Purrfect, loading favorites..</h2>
               !this.state.favorites.length && !this.state.error ?
-                <h2>I knead you to go home and add your favorites</h2>
+                <h2>You knead to go home please and add your favorites</h2>
               : this.state.error && !this.state.favorites.length ?
               <h2>{this.state.error}</h2>
               :<FavoriteList

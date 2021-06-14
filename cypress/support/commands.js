@@ -1,25 +1,39 @@
-// ***********************************************
-// This example commands.js shows you how to
-// create various custom commands and overwrite
-// existing commands.
-//
-// For more comprehensive examples of custom
-// commands please read more here:
-// https://on.cypress.io/custom-commands
-// ***********************************************
-//
-//
-// -- This is a parent command --
-// Cypress.Commands.add('login', (email, password) => { ... })
-//
-//
-// -- This is a child command --
-// Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
-//
-//
-// -- This is a dual command --
-// Cypress.Commands.add('dismiss', { prevSubject: 'optional'}, (subject, options) => { ... })
-//
-//
-// -- This will overwrite an existing command --
-// Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+import advice from '../fixtures/singleAdvice';
+import catPicture from '../fixtures/singleCat';
+
+const adviceBaseURL = 'https://api.adviceslip.com/advice';
+const catBaseURL = 'https://thatcopy.pw/catapi/rest/';
+
+// Cypress.Commands.add('interceptAdvice', () => {
+//   cy.intercept(adviceBaseURL, advice).as('getAdviceStub')
+//     .visit('http://localhost:3000/')
+// })
+
+// Cypress.Commands.add('interceptCatPicture', () => {
+//   cy.intercept(catBaseURL, catPicture).as('getCatStub')
+//     .visit('http://localhost:3000/')
+// })
+
+// Cypress.Commands.add('interceptAdvice', () => {
+// cy.intercept(adviceBaseURL, { fixture: 'advice.json'}).as('getAdviceStub')
+//     // .visit('http://localhost:3000/')
+// })
+
+// Cypress.Commands.add('interceptCatPicture', () => {
+//   cy.intercept(catBaseURL, { fixture: 'cat.json'}).as('getCatStub')
+//     .visit('http://localhost:3000/')
+// })
+
+Cypress.Commands.add('interceptAdvice', () => {
+  cy.fixture(advice)
+    .then((json) => {
+      cy.intercept('GET', adviceBaseURL, json)
+    })
+})
+
+Cypress.Commands.add('interceptCatPicture', () => {
+  cy.fixture(catPicture)
+    .then((json) => {
+      cy.intercept('GET', catBaseURL, json)
+    })
+})

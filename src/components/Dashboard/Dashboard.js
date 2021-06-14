@@ -15,7 +15,7 @@ const Dashboard = ({ advice, catPicture, getData, addFavorite}) => {
         }
         <section className='button-container'>
           <button className='advice-button' onClick={getData}>Receive Advice</button>
-          <button className='add-favorite' onClick={addFavorite}>Add to Favorite</button>
+          <button className='add-favorite' onClick={(e) => addFavorite(e)}>Add to Favorite</button>
         </section>
       </div>
     </section>
