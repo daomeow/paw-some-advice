@@ -1,6 +1,9 @@
+import { isElementOfType } from "react-dom/cjs/react-dom-test-utils.production.min";
+import singleAdvice from "../fixtures/singleAdvice";
+
 describe('Dashboard', () => {
   beforeEach(() => {
-    // cy.interceptAdvice()
+    cy.interceptAdvice()
     cy.visit('/')
   });
 
@@ -10,23 +13,21 @@ describe('Dashboard', () => {
     cy.get('.to-favorites').contains('View Favorites')
   });
 
-  it('should render the dashboard component',() => {
+  it('should render the dashboard component\'s default view on inital load',() => {
     cy.get('.advice').should('have.value', '')
     cy.get('.default-cat').should('have.attr', 'src').should('include', 'cat')
     cy.get('.advice-button').should('be.visible')
     cy.get('.add-favorite').should('be.visible')
   })
 
-  // it('should not see the home button', () => {
-  //   cy.get('.fa-paw')
-  //     .should('not.be.visible') 
-  // })
-
-  // it('should intercept the network request', () => {
-  //   cy.wait('@getAdviceStub')
-  //   .its('response.statusCode')
-  //   .should('eq', 200)
-  // });
+  it('should intercept the advice network request', () => {
+    // cy.wait('@getAdviceStub')
+    // .its('response.statusCode')
+    // .should('eq', 200)
+    cy.intercept('https://api.adviceslip.com/advice', {
+      fixtures: 'advice.json',
+    })
+  });
 
 })
 
