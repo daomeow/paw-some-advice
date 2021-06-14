@@ -4,7 +4,7 @@ describe('Dashboard', () => {
     cy.visit('/')
   });
 
-  it('should render a header component containing the app\'s name and a nav bar', () => {
+  it('should render a header component containing the app\'s name and nav bar', () => {
     cy.get('.header > h1').contains('Paw-some')
     cy.get('.header > h1').contains('Advice')
     cy.get('.to-favorites').contains('View Favorites')
@@ -28,12 +28,14 @@ describe('Dashboard', () => {
     // .should('eq', 200)
     cy.intercept('https://api.adviceslip.com/advice', {
       fixtures: 'advice.json',
+      statusCode: 200
     })
   });
 
   it('should intercept the cat network request', () => {
     cy.intercept('https://thatcopy.pw/catapi/rest/', {
       fixtures: 'cat.json',
+      statusCode: 200
     })
   });
 
@@ -45,14 +47,14 @@ describe('Dashboard', () => {
       cy.url().should('eq', 'http://localhost:3000/' )
   });
 
-  it('should display a specific error message when fetch yields a 404 status', () => {
-    cy.intercept('https://api.adviceslip.com/advice', {
-      statusCode: 404
-    })
-      // .visit('http://localhost:3000/')
-      .get('h2')
-      .contains('Something went wrong')
-  });
+  // it('should display a specific error message when fetch yields a 404 status', () => {
+  //   cy.intercept('https://api.adviceslip.com/advice', {
+  //     statusCode: 404
+  //   })
+  //     .visit('http://localhost:3000/')
+  //     .get('h2')
+  //     .contains('Something went wrong')
+  // });
 
   // it('should display a specific error message when fetch yields a 500 status', () => {
   //   cy.intercept('https://api.adviceslip.com/advice', {
