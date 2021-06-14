@@ -3,7 +3,7 @@ import singleAdvice from "../fixtures/singleAdvice";
 
 describe('Dashboard', () => {
   beforeEach(() => {
-    cy.interceptAdvice()
+    // cy.interceptAdvice()
     cy.visit('/')
   });
 
@@ -18,7 +18,7 @@ describe('Dashboard', () => {
     cy.get('.default-cat').should('have.attr', 'src').should('include', 'cat')
     cy.get('.advice-button').should('be.visible')
     cy.get('.add-favorite').should('be.visible')
-  })
+  });
 
   it('should intercept the advice network request', () => {
     // cy.wait('@getAdviceStub')
@@ -26,6 +26,12 @@ describe('Dashboard', () => {
     // .should('eq', 200)
     cy.intercept('https://api.adviceslip.com/advice', {
       fixtures: 'advice.json',
+    })
+  });
+
+  it('should intercept the cat network request', () => {
+    cy.intercept('https://thatcopy.pw/catapi/rest/', {
+      fixtures: 'cat.json',
     })
   });
 
