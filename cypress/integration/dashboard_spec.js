@@ -1,6 +1,7 @@
 describe('Dashboard', () => {
   beforeEach(() => {
     cy.interceptAdvice()
+    // cy.testTest()
     cy.visit('/')
   });
 
@@ -22,14 +23,19 @@ describe('Dashboard', () => {
   });
 
   it('should intercept the advice network request', () => {
-    // cy.interceptAdvice()
-    // cy.wait('@getAdviceStub')
-    // .its('response.statusCode')
-    // .should('eq', 200)
     cy.intercept('https://api.adviceslip.com/advice', {
       fixtures: 'advice.json',
       statusCode: 200
     })
+  });
+
+  it('should display advice and a cat after clicking the receieve advice button', () => {
+    cy.get('.advice-button').click()
+    cy.get('.advice').should('have.text', 'One of the top five regrets people have is that they didn\'t have the courage to be their true self.')
+    cy.get('.cat-picture').should('be.visible')
+      .and(($img) => {
+        expect($img[0].naturalWidth).to.be.greaterThan(0)
+      })
   });
 
   it('should intercept the cat network request', () => {

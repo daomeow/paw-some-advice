@@ -23,24 +23,14 @@ describe('FavoriteList component', () => {
 
   it('should display an error message if nothing has been added as a favorite', () => {
     cy.get('.to-favorites').click()
-    cy.get('h2').contains('You knead to go home please and add your favorites')
+    cy.get('h2').should('have.text','You knead to go home please and add your favorites')
   }); 
 
-  it.only('should display favorites after being added on the home page', () => {
-    // cy.intercept('https://api.adviceslip.com/advice', {
-    //   fixtures: 'advice.json',
-    // })
-    // cy.visit('/')
-    // cy.intercept('https://thatcopy.pw/catapi/rest/', {
-    //   fixtures: 'cat.json',
-    // })
-
-
-    // cy.intercept('https://api.adviceslip.com/advice',advice.slip.advice)
-    // cy.intercept('https://thatcopy.pw/catapi/rest/', catPicture)
-    // cy.visit('/')
+  it.only('should display favorites after clicking Add to Favorite button', () => {
     cy.get('.advice-button').click()
     cy.get('.add-favorite').click({ force: true })
     cy.get('.to-favorites').click()
+    cy.get('.favorite-advice').should('have.text', 'One of the top five regrets people have is that they didn\'t have the courage to be their true self.')
+    cy.get('.cat-picture').should('be.visible')
   });
 })
