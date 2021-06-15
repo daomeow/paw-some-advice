@@ -41,8 +41,6 @@ class App extends Component {
           <Route 
             exact path='/'
             render={ () => (
-              // this.state.advice && this.state.cat && !this.state.error ?
-              //   <h2>I'm not kitten you, I'm still loading..</h2>
               this.state.error && !this.state.advice && !this.state.cat ?
                 <h2>{this.state.error}</h2>
               :<Dashboard
@@ -56,10 +54,8 @@ class App extends Component {
           <Route 
             exact path='/:favorites'
             render={() => (
-              // this.state.favorites.length && !this.state.error ?
-              // <h2>Purrfect, loading favorites..</h2>
               !this.state.favorites.length && !this.state.error ?
-                <h2>You knead to go home please and add your favorites</h2>
+                <h2>Oops! You knead to go home and add your favorites</h2>
               : this.state.error && !this.state.favorites.length ?
               <h2>{this.state.error}</h2>
               :<FavoriteList

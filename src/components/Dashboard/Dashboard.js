@@ -8,9 +8,9 @@ const Dashboard = ({ advice, catPicture, getData, addFavorite}) => {
       <div className='content'>
         <p className='advice'>{advice}</p>
         {!catPicture ?
-            <img className='default-cat' src={defaultCat} alt='Default cat photo'></img>
+            <img className='default-cat' src={defaultCat} alt='Default cat'></img>
           :<div>
-            <img className='cat-picture' src={catPicture} alt='Cat picture'></img>
+            <img className='cat-picture' src={catPicture} alt='Cat'></img>
           </div>
         }
         <section className='button-container'>

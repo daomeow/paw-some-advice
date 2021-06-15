@@ -18,7 +18,6 @@ const Header = () => {
             <i className="fas fa-paw"></i>Go Home
           </NavLink>
         }
-        <a className='game-tab'><i className="fas fa-caret-right"></i>Play Game</a>
       </section>
     </section>
   )

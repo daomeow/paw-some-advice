@@ -1,6 +1,3 @@
-import catPicture from '../fixtures/cat.json';
-import advice from '../fixtures/advice.json'
-console.log(advice)
 describe('FavoriteList component', () => {
   beforeEach(() => {
     cy.interceptAdvice()
@@ -23,10 +20,10 @@ describe('FavoriteList component', () => {
 
   it('should display an error message if nothing has been added as a favorite', () => {
     cy.get('.to-favorites').click()
-    cy.get('h2').should('have.text','You knead to go home please and add your favorites')
+    cy.get('h2').should('have.text','Oops! You knead to go home and add your favorites')
   }); 
 
-  it.only('should display favorites after clicking Add to Favorite button', () => {
+  it('should display favorites after clicking Add to Favorite button', () => {
     cy.get('.advice-button').click()
     cy.get('.add-favorite').click({ force: true })
     cy.get('.to-favorites').click()

@@ -53,11 +53,11 @@ describe('Dashboard', () => {
       cy.url().should('eq', 'http://localhost:3000/' )
   });
 
-  // it('should display a specific error message when fetch yields a 404 status', () => {
+  // it.only('should display a specific error message when fetch yields a 404 status', () => {
   //   cy.intercept('https://api.adviceslip.com/advice', {
   //     statusCode: 404
   //   })
-  //     .visit('http://localhost:3000/')
+  //     .visit('/')
   //     .get('h2')
   //     .contains('Something went wrong')
   // });
@@ -70,6 +70,5 @@ describe('Dashboard', () => {
   //     .get('h2')
   //     .contains('Something went wrong')
   // });
-
 })
 
