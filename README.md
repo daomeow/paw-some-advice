@@ -4,6 +4,7 @@ For cat folks transitioning back into society during a pandemic
 ## Description
 - Receive advice paired with adorable cats
 - Save your favorites and view them for later
+![home page](./public/favorites.png)
 ## Setup
 - Fork this project to your own Github account
 - Clone the repository to your local machine
